@@ -1,6 +1,6 @@
 const btn = document.getElementById('btn');
 const messageQueue = [];
-let balanceN = 999999999;
+let balanceN = 9999999999;
 
 
 btn.addEventListener('click', () => {
@@ -13,12 +13,13 @@ btn.addEventListener('click', () => {
         if ((response.includes('$') && response.includes('.')) || response.includes('$')) {
         document.getElementById('ext').textContent = response;
         messageQueue.push(response);
-        var res = response.replace("$", ",", ".", " ", "");
+        var res = response.replace(/[$.]/g, "");
+        console.log(res);
         balanceN = balanceN - res;
-        console.log(balanceN);
+        console.log('balanceN = ' + balanceN);
         let balance = '$' + balanceN.toString();
         console.log(balance);
-        document.getElementsByTagName('h1').innerHTML = balance;
+        document.getElementById('balance').textContent = balance;
 
 
       console.log('pushed to messageQueue: ' + messageQueue);
