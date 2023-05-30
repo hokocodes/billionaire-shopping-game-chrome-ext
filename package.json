@@ -1,0 +1,20 @@
+{
+  "name": "billionaire-shopping-game",
+  "version": "1.0.0",
+  "description": "This is a google chrome extension that grabs prices and items from a page to the extension. Everytime the user presses the add button, the price will automatically be deducted from the balance which initially starts off with a billion dollars.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.22.1",
+    "pkg": "^5.8.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
+}

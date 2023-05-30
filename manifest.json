@@ -1,26 +1,28 @@
 {
-    "name": "hoko's ext",
-    "description": "my ext",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
-        "default_popup": "popup.html" 
-      },
-      "permissions": [
-        "activeTab",
-        "storage",
-        "scripting"
+  "name": "hoko's ext",
+  "description": "my ext",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
       ],
-      "background": {
-        "service_worker": "background.js",
-        "type": "module"
-
-      },
-      "content_scripts": [
-        {
-          "matches": ["https://*/*"],
-          "js": ["content.js"]
-        }
+      "js": [
+        "content.js"
       ]
-  
+    }
+  ]
 }
